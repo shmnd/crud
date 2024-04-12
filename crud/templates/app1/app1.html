@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>hello students</h1>
+
+    {% if info %}
+
+    <table border=3px>
+        <thead>
+            <th>No</th>
+            <th>name</th>
+            <th>age</th>
+            <th>place</th>
+            <th>major</th>
+            <th colspan="2">Action</th>
+        </thead>
+        <tbody>
+            {% for i in info  %}
+              <tr>
+                <td>{{i.sno}}</td>
+                <td>{{i.sname}}</td>
+                <td>{{i.sage}}</td>
+                <td>{{i.splace}}</td>
+                <td>{{i.smajor}}</td>
+                <td><a href="{% url 'update' i.id%}"><button>Update</button></a></td>
+                <td><a href="{% url 'delrec' i.id %}"><button>delete</button></a></td>
+
+                
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {%else%}
+        <p>No records</p>      
+    {% endif %}
+    <a href="{% url 'add' %}">Add students</a>
+    
+
+
+</body>
+</html>

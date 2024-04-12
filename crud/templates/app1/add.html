@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add students</h1>
+    <form action="{% url 'addrec' %}" method="POST">
+        {% csrf_token %}
+
+        <label for="">Number</label><br>
+        <input type="text" name="sno" id="sno"><br>
+
+        <label for="">Name</label> <br>
+        <input type="text" name="sname"> <br>
+
+        <label for="">Age</label> <br>
+        <input type="text" name="sage" id=""> <br>
+
+        <label for="">Place</label> <br>
+        <input type="text" name="splace"> <br>  
+
+        <label for="">Major</label><br>
+        <input type="text" name="smajor"> <br>
+
+        <button type="submit" id="new">ENTER</button>
+
+    </form>
+</body>
+</html>
