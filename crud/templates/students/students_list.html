@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %} LIST STUDENTS{% endblock %}
+
+{% block body %} 
+    
+    <h1>hello students </h1>
+
+    <table border=3px>
+        <thead>
+            <th>No</th>
+            <th>name</th>
+            <th>age</th>
+            <th>place</th>
+            <th>major</th>
+            <th colspan="2">Action</th>
+        </thead>
+        <tbody>
+            {% for i in object_list  %}
+              <tr>
+                <td>{{i.sno}}</td>
+                <td>{{i.sname}}</td>
+                <td>{{i.sage}}</td>
+                <td>{{i.splace}}</td>
+                <td>{{i.smajor}}</td>
+                {% comment %} <td><a href="{% url "stud_view" i.id %}"> <button> View </button> </a></td> {% endcomment %}
+                <td><a href="{% url 'stud_upd' i.id%}"><button>Update</button></a></td>
+                <td><a href="{% url 'stud_del' i.id %}"><button>delete</button></a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+   
+    <a href="{% url 'stud_new' %}"> <button>Add students</button></a>
+    
+  
+{% endblock  %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>hello students </h1>
+
+
+    <table border=3px>
+        <thead>
+            <th>No</th>
+            <th>name</th>
+            <th>age</th>
+            <th>place</th>
+            <th>major</th>
+            <th colspan="2">Action</th>
+        </thead>
+        <tbody>
+            {% for i in object_list  %}
+              <tr>
+                <td>{{i.sno}}</td>
+                <td>{{i.sname}}</td>
+                <td>{{i.sage}}</td>
+                <td>{{i.splace}}</td>
+                <td>{{i.smajor}}</td>
+                {% comment %} <td><a href="{% url "stud_view" i.id %}"> <button> View </button> </a></td> {% endcomment %}
+                <td><a href="{% url 'stud_upd' i.id%}"><button>Update</button></a></td>
+                <td><a href="{% url 'stud_del' i.id %}"><button>delete</button></a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+   
+    <a href="{% url 'stud_new' %}"> <button>Add students</button></a>
+    
+
+
+</body>
+</html> -->

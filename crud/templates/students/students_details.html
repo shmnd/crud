@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %} STUDENT DETAILS{% endblock %}
+
+{% block body %}
+<h1>students Details</h1>
+    {% for i in info  %}
+        <tr>
+        <td>{{i.sno}}</td>
+        <td>{{i.sname}}</td>
+        <td>{{i.sage}}</td>
+        <td>{{i.splace}}</td>
+        <td>{{i.smajor}}</td>
+        </tr>
+    {% endfor %}
+{% endblock  %}
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>students Details</h1>
+    {% for i in info  %}
+        <tr>
+        <td>{{i.sno}}</td>
+        <td>{{i.sname}}</td>
+        <td>{{i.sage}}</td>
+        <td>{{i.splace}}</td>
+        <td>{{i.smajor}}</td>
+        </tr>
+    {% endfor %}
+</body>
+</html> {% endcomment %}
