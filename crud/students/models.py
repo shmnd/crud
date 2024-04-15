@@ -14,5 +14,4 @@ class Students(models.Model):
     def __str__(self) :
         return self.sname
     
-    def get_absolute_url(self):
-        return reverse('book_edit', kwargs={'pk': self.pk})
+    
